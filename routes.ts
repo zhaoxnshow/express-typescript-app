@@ -1,4 +1,5 @@
 import { login } from "./handlers/auth";
+import { style } from './handlers/style';
 import { home } from "./handlers/home";
 import { signup } from "./handlers/user";
 import { requestLogger } from "./middleware/requestLogger";
@@ -22,5 +23,11 @@ export const routes: Route[] = [
     path: "/login",
     middleware: [requestLogger],
     handler: login,
+  },
+  {
+    method: "get",
+    path: "/getStyle",
+    middleware: [requestLogger],
+    handler: style,
   },
 ];
